@@ -6,7 +6,7 @@
 /*   By: gdannay <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 16:10:59 by gdannay           #+#    #+#             */
-/*   Updated: 2018/03/21 13:40:19 by gdannay          ###   ########.fr       */
+/*   Updated: 2018/04/18 13:49:09 by gdannay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ static void		check_double(t_arfile *first)
 	while (tmp)
 	{
 		parse = tmp->next;
-		while (parse && !ft_strcmp(parse->name, tmp->name))
+		while (parse)
 		{
-			parse->to_display = 0;
+			if (!ft_strcmp(parse->name, tmp->name))
+				parse->to_display = 0;
 			parse = parse->next;
 		}
 		tmp = tmp->next;
